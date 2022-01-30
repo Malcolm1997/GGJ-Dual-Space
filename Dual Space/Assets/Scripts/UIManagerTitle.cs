@@ -5,7 +5,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManagerTitle : MonoBehaviour
 {
     [Header("Title Screen")]
     [SerializeField] private AudioSource TitleMusic;
