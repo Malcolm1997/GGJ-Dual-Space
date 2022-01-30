@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UiManagerEndTitle : MonoBehaviour
@@ -44,6 +45,8 @@ public class UiManagerEndTitle : MonoBehaviour
             .Append(Title.GetComponent<Image>().DOFade(0F, .5f))
             .Join(Start_btn.GetComponent<Image>().DOFade(0F, .5f))
             .Join(Help_btn.GetComponent<Image>().DOFade(0F, .5f));
+        StartCoroutine(nextInGame());
+
             
     }
 
@@ -59,6 +62,13 @@ public class UiManagerEndTitle : MonoBehaviour
     public void btnHover()
     {
         hoverClick.Play();
+    }
+
+    IEnumerator nextInGame()
+    {
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("InGame");
     }
 
 }
